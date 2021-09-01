@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>03-12</title>
+<script type="text/javascript">
+var msg = "GLOBAL";
+
+function outer() {
+    console.log('msg:',msg);
+    
+    var msg = "OUTER";
+    console.log('msg:',msg);
+    
+    inner();
+    function inner() {
+        var msg = "INNER";
+        console.log('msg:',msg);
+    }
+}
+
+outer();
+
+/*
+1) 전역에서 호이스팅 단계를 7행에서 거치며, 전역 실행 컨텍스트와 전역 객체가 생성
+2) outer() 함수
+*/
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

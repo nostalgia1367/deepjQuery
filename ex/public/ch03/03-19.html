@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>03-19</title>
+<script type="text/javascript">
+function outer(g, x) {
+    function inner(y) {
+        return x+y;   
+    }
+    g.bbb = inner;
+}
+
+console.dir(window)
+
+//var b = outer(window, 4);
+outer(window, 4);
+
+var result = bbb(5);
+console.log(result);
+</script>
+</head>
+<body>
+
+</body>
+</html>

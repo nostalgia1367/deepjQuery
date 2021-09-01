@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>04-15</title>
+<script type="text/javascript">
+function test(x,y) {
+  var result = x+y;
+  this.result = result;
+}
+test(1,2);
+console.log(window.result);
+
+var p1 = { name:"홍길동" };
+test.apply(p1, [ 3, 4 ]);
+
+console.log(p1.result);
+
+var p2 = { name:"이몽룡" };
+test.call(p2, 5, 6);
+console.log(p2.result);
+
+/*
+call 과 apply 차이는
+
+call은 인자를 보내고
+apply를 배열(리스트)형태로 보낸다
+
+fun.call(thisArg[,arg1[,arg2[, ...]]])
+fun.apply(thisArg[,argsArray])
+
+call()사용시 this는 thisArg객체를 가리키게 되는데 전달하지 않으면 전역객체(window)를 가르킨다.
+
+모든 함수는 apply()와 call() 메소드를 제공한다.
+이 메서드의 첫 번째 파라미터는 this값으로 바인딩할 객체이며,
+함수를 호출할 때 this를 직접 결정할 수 있다.
+
+call(), apply() 둘다 동일한 기능을 제공하지만 제공받는 파라미터의 종류가 보다시피 다르다.
+
+
+*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

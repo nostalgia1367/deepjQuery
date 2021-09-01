@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>03-08</title>
+<script type="text/javascript">
+
+function test(callback) {
+    console.log("type:",typeof callback);
+    if (typeof callback != "function") {
+        console.error("====");
+         throw "callback 파라미터 값으로 함수만 전달가능합니다";   
+    }
+    callback();
+}
+    
+test(function() { 
+    console.log("hello");  
+});
+
+test("asd");
+/*
+8 Line : test() 함수는 명시적 파라미터 callback을 전달받고 있다.
+전달받은 파라미터가 function 타입인지 확인 후 실행한다. 
+
+17 Line : 익명함수를 전달하면서 실행한다.
+*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>JSON</title>
+<script type="text/javascript">
+var data = {
+  "_id" : "mspark11",
+  "name" : "박명수",
+  "phones" : [ "010-2452-8864", "02-2214-3521" ],
+  "title" : "수석 컨설턴트",
+  "hiredate" : new Date("2010-09-01")
+};
+
+var str = JSON.stringify(data, function(key, value) {
+  if (key == "hiredate") {
+      //alert(value);
+     return new Date(value).getTime();
+  } else {
+     return value;
+  }
+});
+
+console.log(str);
+
+/*
+JSON이 자바스크립트의 객체 리터럴이나 배열 리터럴의 형태이지만,
+문자열 데이터인 것은 분명하다.
+
+따라서 웹 브라우저에서 서버로 데이터를 전송하기 위해서는 자바스크립트 객체를 JSON 문자열로 변환하는 과정이 필요하다.
+
+서버로 요청 정보를 전송하기 위해 JSON.stringify() 메소드를 이용하여 JSON문자열로 변환할 수 있다.
+
+서버에서는 JSON 문자열 형식의 데이터를 수신하면 JSON.parse() 메서드를 이용해 자바스크립트 객체로 하싱하여 사용할 수 있다.
+
+JSON.parse() 사용법
+JSON.parse[jsontext[,receiver]]
+    jsontext : 필수값, JSON 문자열
+    receiver : 옵션값, 각 함수로 전달되는 파라미터 key, value 값인  함수가 호출된다. 
+
+
+JSON.stringify() 사용법
+JSON.stringify[object [,replacer]]
+    object : 필수값, JSON 문자열로 변환하려는 자바스크립트 객체
+    replacer : 옵션값, 객체의 속성 이름/값 파라미터가 되며, 리턴하는 값이 JSON문자열 필드의 값이 된다.
+
+
+    
+
+*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

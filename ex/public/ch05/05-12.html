@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>05-12</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+    var pat1 = /[ㄱ-ㅎ|ㅏ-ㅑ|가-힣]/;
+    var pat2 = /[ㄱ-ㅎ|ㅏ-ㅑ|가-힣]/g;
+
+    var str1 = "한글과 English 비교";
+    var str2 = "Hello World!!";
+
+    
+    
+    console.log(pat1.test(str1));	//결과 : true
+    console.log(pat2.test(str2));	//결과 : false
+
+    console.log(str1.match(pat1));    //true
+    console.log(str1.match(pat2));    //false
+</script>
+</head>
+<body>
+
+    <!--
+        정규식 리터럴 이용 : var 변수명 = /패턴/플래그;
+        RegExp 생성자 함수 이용 : var 변수명 = new RegExp("패턴","플래그");
+
+        주의해야할 점 : 이스케이프 문자(\) 처리이다. 정규식 리터럴에서는 \를 한 번만 적어도 되지만,
+        RegExp 생성자 함수를 이용하는 경우는 반드시 \\로 표현해야 \ 문자열 하나를 나타낸다.
+
+        - 패턴, 플래그 생성 법
+        정규식 패턴을 만들려면 문자 표현 패턴, 수량 패턴, 위치 지정 패턴 등 
+        플래그 등 모두 알아야 한다.
+
+        [ 패턴 ]
+        /abc/       : 'abc' 문자열이 연속된 문자열 패턴을 의미
+        /[abc]/     : a,b,c 중 임의의 한 문자만 나타내는 패턴
+        /[^abc]/    : a,b,c 가 아닌 임의의 한 문자 []안에서 사용되는 ^ 기호는not을 의미
+        /./         : /./ 마침표(.) 기호는 줄바꿈 문자가 아닌 임의의 한 문자를 나타냄
+        \w          : 소문자w는 알파뉴머릭(Alphanumeric)* 문자 중 임의의 한 문자를 나타내는 패턴
+        \W          : \W는 대문자인 경우는 not Alphanumeric의 의미. 알파튜머릭이 아닌 문자열 중 임의의 한 문자를 나타냄
+        \d          : \d 디지트(digit) 문자열 중 임의의 한 문자
+        \D          : \D 디지트(digit) 아닌 문자열 중 임의의 한 문자
+
+        {n,m}       : n번 이상 m번 이하로 반복되는 패턴
+        {n,}        : n번 이상 반복되는 패턴
+        {n}}        : n번 반복되는 패턴
+        ?           : 0번 또는 한 번 나타내는 패턴 {0,1}과 같은 의미
+        +           : 한 번 이상 반복되는 패턴 {1,}과 같은 의미
+        *           : 0번 또는 여러번 반복되는 의미
+
+        ^           : ~로 시작되는 
+        $           : ~로 끝나는
+        |           : OR 기능 ex) /ab|cd|ef/ ab 또는 cd 또는 ef 문자열을 포함
+
+
+        [ 플래그 ]
+        g           : 글로벌(Global) 약자. 패턴을 찾는 작업을 전체 문자열에 걸쳐 여러번 반복
+        i           : 문자열 패턴을 찾을 때 대소문자를 구분하지 않고 패턴 검색
+        m           : 여러 줄의 문자열에서 패턴을 찾는 작업을 진행
+
+
+
+        예제
+        - 휴대폰 전화번호 정규식 /01[016789]-\d{3,4}-\d{4}/
+        - 알파벳 2글자-숫자5개로 이루어진 상품 코드(ex ab-12345) /[A-Za-z]{2}-wd{5}/
+        - A로 시작하고 임의의 문자가 여러번 나온 뒤 마지막에 C로 끝나는 문자열 /^A.+C$/
+        - URL 주소 /(http(s)?:\/\/)?\w+\.\w+)+/
+        - 한글 패턴 [ㄱ-ㅎ|ㅏ-ㅑ|가-힣]
+
+
+        [JavaScript 정규식 사용방법 2가지]
+        - pattern을 미리정의하고 비교법
+        - String에서 정규식 사용법
+        
+        var pat1 = /[ㄱ-ㅎ|ㅏ-ㅑ|가-힣];
+        var pat2 = /[ㄱ-ㅎ|ㅏ-ㅑ|가-힣]/g;
+
+        var str1 = "한글";
+        var str2 = "English";
+
+        console.log(pat1.test(str1));    //true
+        console.log(pat1.test(str2));    //false
+
+        console.log(str1.match(pat1));
+        console.log(str1.match(pat2));
+
+
+
+
+
+    -->
+</body>
+</html>

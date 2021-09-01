@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>03-29</title>
+<script type="text/javascript">
+function outer() {
+    var outerargs = arguments;
+    var thiss = this;
+    inner();
+    function inner() {
+        console.log(outerargs);  
+        console.log(arguments);
+        //console.log(thiss);
+        //console.log(this);
+    }
+}
+    
+outer();
+</script>
+</head>
+<body>
+</body>
+</html>

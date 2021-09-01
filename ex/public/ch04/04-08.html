@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>04-08</title>
+<script type="text/javascript">
+var a = [100,200,300];
+a.name = "홍길동";
+a.age = 20;
+a.email = "gdhong@gmail.com";
+
+console.dir(a);
+console.log('배열 길이',a.length);
+
+for (var k in a) {
+   console.log(k + "--->" + a[k]);
+}
+
+console.warn(":::::::::::::::");
+for(var k=0; k < a.length; k++){
+    console.log(k + "--->" + a[k]);
+}
+
+/*배열의 요소값은 그대로 유지되면서 a객체 속성이 추가되었다.
+속성이 추가되더라도 length 속성에는 영향을 주지 않고 있다.(핵심)
+
+배열의 요소를 열거하고 싶을 때는 for in , for문 모두 사용할 수 있지만
+for문을 사용하는 것을 권장한다.
+
+*/
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

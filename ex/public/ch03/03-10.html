@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>03-10</title>
+<script type="text/javascript">
+var setmessage = function(message) {
+    return function(name) {
+        return message + " " + name;
+    }
+}
+
+function setmessage1(message1){
+    return function(name){
+        return message1 + " " + name;
+    }
+}
+
+var m = setmessage("hello");
+
+console.log(m("홍길동"));
+
+
+/*
+7행의 함수는 8행에 있는 익명함수를 리턴한다.
+리턴된 함수 객체는 19행의 m변수에 할당
+*/
+
+console.log(setmessage1("익명 함수호출"));
+console.log(setmessage1("hello2")("홍길동2"));
+//console.log(m("이몽룡"));
+//console.log(m("성춘향"));
+</script>
+</head>
+<body>
+
+</body>
+</html>

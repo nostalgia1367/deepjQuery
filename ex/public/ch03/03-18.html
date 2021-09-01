@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<title>03-18</title>
+<script type="text/javascript">
+    
+function outer(x) {
+    function inner(y) {
+        console.log(1);
+        return x+y;   
+    }
+    //console.log(inner)
+    return inner;
+}
+var a = outer(4);
+
+
+console.log("a",a);
+
+//console.log(a);
+var result = a(5);
+console.log(result);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
